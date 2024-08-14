@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <style>
         .fade-text {
@@ -37,6 +38,37 @@
             }
             100% {
                 opacity: 0;
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .fade-text {
+                font-size: 200%;
+            }
+
+            .intro1 {
+                margin-top: 20%;
+            }
+
+            .intro2 {
+                margin-top: 10%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            
+            .fade-text {
+                font-size: 110%;
+            }
+
+            .intro1 {
+                margin-top: 70%;
+            }
+
+            .intro2 {
+                margin-top: -5%;
+                font-size: 120%;
             }
         }
     </style>

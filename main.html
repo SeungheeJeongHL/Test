@@ -126,6 +126,72 @@
             float: left;
             z-index: 15;
         }
+
+        @media screen and (max-width: 768px) {
+            .menu_text {
+                font-size: 1.2em;
+            }
+
+            .hover_img {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .menu_text:hover .hover_img{
+                visibility: hidden;
+                opacity: 0;
+            }
+
+
+            .left_out_circle,
+            .right_out_circle {
+                width: 15vw;
+                height: 15vh;
+            }
+
+            .projects_box,
+            .news_box {
+                margin-top: 5vh;
+            }
+
+            .contact_us_box,
+            .members_box {
+                margin-top: 3vh;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .menu_text {
+                font-size: 1em;
+            }
+
+            .hover_img {
+                opacity : 0;
+                visibility: hidden;
+            }
+
+            .menu_text:hover .hover_img{
+                visibility: hidden;
+                opacity: 0;
+            }
+
+    
+            
+
+            .left_out_circle,
+            .right_out_circle {
+                width: 20vw;
+                height: 20vh;
+            }
+
+            .projects_box,
+            .news_box,
+            .contact_us_box,
+            .members_box {
+                margin-top: 3vh;
+            }
+        }
+
     </style>
     <title>Title</title>
 </head>
@@ -181,7 +247,13 @@
 
     <script>
 
-        document.addEventListener("touchstart", function () { }, true);
+        
+document.addEventListener('touchmove', function (event) {
+    if (event.touches.length > 0) {
+        const touch = event.touches[0];
+        moveCircles(touch.clientX, touch.clientY);
+    }
+});
 
         document.addEventListener('mousemove', function (event) {
             const circles = document.querySelectorAll('.mid_circle');
